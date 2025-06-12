@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:= polymorphism
+NAME		:= i_dont_want_to_set_the_world_on_fire
 
 CXX			:= c++
 CFLAGS		:= -Wall -Wextra -Werror -std=c++20
@@ -22,7 +22,8 @@ HEADERS		:= $(INC_DIR)/Animal.hpp		\
 			   $(INC_DIR)/Cat.hpp			\
 			   $(INC_DIR)/WrongAnimal.hpp	\
 			   $(INC_DIR)/WrongDog.hpp		\
-			   $(INC_DIR)/WrongCat.hpp
+			   $(INC_DIR)/WrongCat.hpp		\
+			   $(INC_DIR)/Brain.hpp
 # ---------------------------------------------------------------------------- #
 SRC_DIR	:=	./src
 OBJ_DIR	:=	./obj
@@ -33,6 +34,7 @@ SRC :=	$(SRC_DIR)/Animal.cpp		\
 		$(SRC_DIR)/WrongAnimal.cpp	\
 		$(SRC_DIR)/WrongDog.cpp		\
 		$(SRC_DIR)/WrongCat.cpp		\
+		$(SRC_DIR)/Brain.cpp		\
 		$(SRC_DIR)/main.cpp
 # ---------------------------------------------------------------------------- #
 OBJ :=	$(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRC))

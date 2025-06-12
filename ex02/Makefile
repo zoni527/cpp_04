@@ -10,29 +10,31 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:= polymorphism
+NAME		:= abstract_class
 
 CXX			:= c++
 CFLAGS		:= -Wall -Wextra -Werror -std=c++20
 DEBUG_FLAGS	:= -g
 # ---------------------------------------------------------------------------- #
 INC_DIR		:= ./inc
-HEADERS		:= $(INC_DIR)/Animal.hpp		\
+HEADERS		:= $(INC_DIR)/AAnimal.hpp		\
 			   $(INC_DIR)/Dog.hpp			\
 			   $(INC_DIR)/Cat.hpp			\
 			   $(INC_DIR)/WrongAnimal.hpp	\
 			   $(INC_DIR)/WrongDog.hpp		\
-			   $(INC_DIR)/WrongCat.hpp
+			   $(INC_DIR)/WrongCat.hpp		\
+			   $(INC_DIR)/Brain.hpp
 # ---------------------------------------------------------------------------- #
 SRC_DIR	:=	./src
 OBJ_DIR	:=	./obj
 # ---------------------------------------------------------------------------- #
-SRC :=	$(SRC_DIR)/Animal.cpp		\
+SRC :=	$(SRC_DIR)/AAnimal.cpp		\
 		$(SRC_DIR)/Dog.cpp			\
 		$(SRC_DIR)/Cat.cpp			\
 		$(SRC_DIR)/WrongAnimal.cpp	\
 		$(SRC_DIR)/WrongDog.cpp		\
 		$(SRC_DIR)/WrongCat.cpp		\
+		$(SRC_DIR)/Brain.cpp		\
 		$(SRC_DIR)/main.cpp
 # ---------------------------------------------------------------------------- #
 OBJ :=	$(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRC))

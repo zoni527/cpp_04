@@ -1,0 +1,138 @@
+[
+ {
+  "directory": "/home/jvarila/Repos/cpp_04/ex01",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++20",
+   "-I",
+   "./inc",
+   "-c",
+   "src/Animal.cpp",
+   "-o",
+   "obj/Animal.o"
+  ],
+  "file": "src/Animal.cpp"
+ },
+ {
+  "directory": "/home/jvarila/Repos/cpp_04/ex01",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++20",
+   "-I",
+   "./inc",
+   "-c",
+   "src/Dog.cpp",
+   "-o",
+   "obj/Dog.o"
+  ],
+  "file": "src/Dog.cpp"
+ },
+ {
+  "directory": "/home/jvarila/Repos/cpp_04/ex01",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++20",
+   "-I",
+   "./inc",
+   "-c",
+   "src/Cat.cpp",
+   "-o",
+   "obj/Cat.o"
+  ],
+  "file": "src/Cat.cpp"
+ },
+ {
+  "directory": "/home/jvarila/Repos/cpp_04/ex01",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++20",
+   "-I",
+   "./inc",
+   "-c",
+   "src/WrongAnimal.cpp",
+   "-o",
+   "obj/WrongAnimal.o"
+  ],
+  "file": "src/WrongAnimal.cpp"
+ },
+ {
+  "directory": "/home/jvarila/Repos/cpp_04/ex01",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++20",
+   "-I",
+   "./inc",
+   "-c",
+   "src/WrongDog.cpp",
+   "-o",
+   "obj/WrongDog.o"
+  ],
+  "file": "src/WrongDog.cpp"
+ },
+ {
+  "directory": "/home/jvarila/Repos/cpp_04/ex01",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++20",
+   "-I",
+   "./inc",
+   "-c",
+   "src/WrongCat.cpp",
+   "-o",
+   "obj/WrongCat.o"
+  ],
+  "file": "src/WrongCat.cpp"
+ },
+ {
+  "directory": "/home/jvarila/Repos/cpp_04/ex01",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++20",
+   "-I",
+   "./inc",
+   "-c",
+   "src/Brain.cpp",
+   "-o",
+   "obj/Brain.o"
+  ],
+  "file": "src/Brain.cpp"
+ },
+ {
+  "directory": "/home/jvarila/Repos/cpp_04/ex01",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++20",
+   "-I",
+   "./inc",
+   "-c",
+   "src/main.cpp",
+   "-o",
+   "obj/main.o"
+  ],
+  "file": "src/main.cpp"
+ }
+]

@@ -19,30 +19,30 @@ std::string const	dog_str = C_B_HI_R "Dog" C_RST;
 // ------------------------------------------------------------ member functions
 
 void Dog:: makeSound( void ) const {
-	std::cout << dog_str + " makes a sound: \"Woof!\"" << std::endl;
+	std::cout << dog_str + "	makes a sound: \"Woof!\"" << std::endl;
 }
 
 // ---------------------------------------------------------------- constructors
 
 Dog:: Dog( void ) {
-	std::cout << dog_str + " default constructor called" << std::endl;
+	std::cout << dog_str + "	default constructor called" << std::endl;
 	_type = "Dog";
 }
 
 Dog:: Dog( Dog const &src ) : Animal( src ) {
-	std::cout << dog_str + " copy constructor called" << std::endl;
+	std::cout << dog_str + "	copy constructor called" << std::endl;
 }
 
 // ------------------------------------------------------------------ destructor
 
 Dog:: ~Dog( void ) {
-	std::cout << dog_str + " destructor called" << std::endl;
+	std::cout << dog_str + "	destructor called" << std::endl;
 }
 
 // ---------------------------------------------------------- operator overloads
 
 Dog &Dog:: operator = ( Dog const &src ) {
-	std::cout << dog_str + " assignment operator called" << std::endl;
+	std::cout << dog_str + "	assignment operator called" << std::endl;
 	if (this == &src)
 		return *this;
 	Animal:: operator=( src );

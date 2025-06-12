@@ -22,14 +22,22 @@ void Cat:: makeSound( void ) const {
 	std::cout << cat_str + "	makes a sound: \"Meow!\"" << std::endl;
 }
 
+std::string Cat:: get_idea( size_t index ) {
+	return _brain->get_idea( index );
+}
+
+std::string Cat:: get_random_idea( void ) {
+	return _brain->get_random_idea();
+}
+
 // ---------------------------------------------------------------- constructors
 
-Cat:: Cat( void ) {
+Cat:: Cat( void ) : _brain( new Brain() ) {
 	std::cout << cat_str + "	default constructor called" << std::endl;
 	_type = "Cat";
 }
 
-Cat:: Cat( Cat const &src ) : Animal( src ) {
+Cat:: Cat( Cat const &src ) : Animal( src ), _brain( new Brain( *src._brain ) ) {
 	std::cout << cat_str + "	copy constructor called" << std::endl;
 }
 
@@ -37,6 +45,7 @@ Cat:: Cat( Cat const &src ) : Animal( src ) {
 
 Cat:: ~Cat( void ) {
 	std::cout << cat_str + "	destructor called" << std::endl;
+	delete _brain;
 }
 
 // ---------------------------------------------------------- operator overloads
@@ -46,5 +55,6 @@ Cat &Cat:: operator = ( Cat const &src ) {
 	if (this == &src)
 		return *this;
 	Animal:: operator=( src );
+	*_brain = *src._brain;
 	return *this;
 }

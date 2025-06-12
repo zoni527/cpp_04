@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/11 13:47:29 by jvarila           #+#    #+#             */
-/*   Updated: 2025/06/11 17:52:36 by jvarila          ###   ########.fr       */
+/*   Created: 2025/06/11 13:08:24 by jvarila           #+#    #+#             */
+/*   Updated: 2025/06/12 15:46:34 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 
-# include "Animal.hpp"
+# include <string>
 
-class Dog : public Animal {
+class AAnimal {
 
 public:
-
 // ------------------------------------------------------------ member functions
-	void	makeSound( void ) const override;
+	virtual void	makeSound( void ) const = 0;
+	std::string		getType() const;
 // ---------------------------------------------------------------- constructors
-	Dog( void );
-	Dog( Dog const &src );
+	AAnimal( void );
+	AAnimal( AAnimal const &src );
 // ------------------------------------------------------------------ destructor
-	~Dog( void );
+	virtual	~AAnimal( void );
 // --------------------------------------------------- member operator overloads
-	Dog &operator = ( Dog const &src );
+	AAnimal &operator = ( AAnimal const &src );
+
+protected:
+	std::string	_type;
 };
 
 #endif

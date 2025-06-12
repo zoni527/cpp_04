@@ -1,50 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/11 17:09:22 by jvarila           #+#    #+#             */
-/*   Updated: 2025/06/11 17:10:36 by jvarila          ###   ########.fr       */
+/*   Created: 2025/06/12 09:52:33 by jvarila           #+#    #+#             */
+/*   Updated: 2025/06/12 09:59:20 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#import "Cat.hpp"
+#import "WrongAnimal.hpp"
 #import "ansi_colors.hpp"
 #include <iostream>
 
-std::string const	cat_str = C_B_HI_B "Cat" C_RST;
+std::string const	wronganimal_str = C_B_HI_BL "WrongAnimal" C_RST;
 
 // ------------------------------------------------------------ member functions
 
-void Cat:: makeSound( void ) const {
-	std::cout << cat_str + "	makes a sound: \"Meow!\"" << std::endl;
+void WrongAnimal:: makeSound( void ) const {
+	std::cout << wronganimal_str + "	makes a sound: \"Yolo!\"" << std::endl;
+}
+
+std::string WrongAnimal:: getType( void ) const {
+	return _type;
 }
 
 // ---------------------------------------------------------------- constructors
 
-Cat:: Cat( void ) {
-	std::cout << cat_str + "	default constructor called" << std::endl;
-	_type = "Cat";
+WrongAnimal:: WrongAnimal( void ) : _type( "WrongAnimal" ) {
+	std::cout << wronganimal_str + "	default constructor called" << std::endl;
 }
 
-Cat:: Cat( Cat const &src ) : Animal( src ) {
-	std::cout << cat_str + "	copy constructor called" << std::endl;
+WrongAnimal:: WrongAnimal( WrongAnimal const &src ) {
+	std::cout << wronganimal_str + "	copy constructor called" << std::endl;
+	_type = src._type;
 }
 
 // ------------------------------------------------------------------ destructor
 
-Cat:: ~Cat( void ) {
-	std::cout << cat_str + "	destructor called" << std::endl;
+WrongAnimal:: ~WrongAnimal( void ) {
+	std::cout << wronganimal_str + "	destructor called" << std::endl;
 }
 
 // ---------------------------------------------------------- operator overloads
 
-Cat &Cat:: operator = ( Cat const &src ) {
-	std::cout << cat_str + "	assignment operator called" << std::endl;
+WrongAnimal &WrongAnimal:: operator = ( WrongAnimal const &src ) {
+	std::cout << wronganimal_str + "	assignment operator called" << std::endl;
 	if (this == &src)
 		return *this;
-	Animal:: operator=( src );
+	_type = src._type;
 	return *this;
 }

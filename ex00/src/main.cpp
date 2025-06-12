@@ -12,6 +12,8 @@
 
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "WrongDog.hpp"
+#include "WrongCat.hpp"
 #include "ansi_colors.hpp"
 #include <iostream>
 
@@ -23,21 +25,16 @@ int main( void ) {
 	print_test_name( "Test: subject's main (with better formatting)" );
 	{
 		const Animal* meta = new Animal();
-		std::cout << "\n";
 		const Animal* j = new Dog();
-		std::cout << "\n";
 		const Animal* i = new Cat();
 		std::cout << "\n";
 
 		std::cout << j->getType() << " " << std::endl;
-		std::cout << "\n";
 		std::cout << i->getType() << " " << std::endl;
 		std::cout << "\n";
 
 		i->makeSound(); //will output the cat sound!
-		std::cout << "\n";
 		j->makeSound();
-		std::cout << "\n";
 		meta->makeSound();
 		std::cout << "\n";
 
@@ -45,35 +42,115 @@ int main( void ) {
 		delete i;
 		delete j;
 	}
-	print_test_name( "Test: default costructor" );
+	print_test_name( "Test: subject's main with wrong animals (with better formatting)" );
 	{
-		Animal	a;
-		Dog		d;
-		Cat		c;
+		const WrongAnimal* meta = new WrongAnimal();
+		const WrongAnimal* j = new WrongDog();
+		const WrongAnimal* i = new WrongCat();
+		std::cout << "\n";
+
+		std::cout << j->getType() << " " << std::endl;
+		std::cout << i->getType() << " " << std::endl;
+		std::cout << "\n";
+
+		i->makeSound(); //will output the cat sound!
+		j->makeSound();
+		meta->makeSound();
+		std::cout << "\n";
+
+		delete meta;
+		delete i;
+		delete j;
 	}
-	print_test_name( "Test: copy constructor" );
+	print_test_name( "Test: default costructors" );
 	{
-		Animal	a1;
-		Animal	a2( a1 );
-		Dog		d1;
-		Dog		d2( d1 );
-		Cat		c1;
-		Cat		c2( c1 );
+		{
+			Animal	a;
+			std::cout << "\n";
+			Dog		d;
+			std::cout << "\n";
+			Cat		c;
+			std::cout << "\n";
+		}
+		std::cout << std::endl;
+		{
+			WrongAnimal	a;
+			std::cout << "\n";
+			WrongDog	d;
+			std::cout << "\n";
+			WrongCat	c;
+			std::cout << "\n";
+		}
 	}
-	print_test_name( "Test: copy assignment operator" );
+	print_test_name( "Test: copy constructors" );
 	{
-		Animal	a1, a2;
-		a1 = a2;
-		Dog		d1, d2;
-		d1 = d2;
-		Cat		c1, c2;
-		c1 = c2;
+		{
+			Animal	a1;
+			Animal	a2( a1 );
+			std::cout << "\n";
+			Dog		d1;
+			Dog		d2( d1 );
+			std::cout << "\n";
+			Cat		c1;
+			Cat		c2( c1 );
+			std::cout << "\n";
+		}
+		std::cout << std::endl;
+		{
+			WrongAnimal	a1;
+			WrongAnimal	a2( a1 );
+			std::cout << "\n";
+			WrongDog		d1;
+			WrongDog		d2( d1 );
+			std::cout << "\n";
+			WrongCat		c1;
+			WrongCat		c2( c1 );
+			std::cout << "\n";
+		}
+	}
+	print_test_name( "Test: copy assignment operators" );
+	{
+		{
+			Animal	a1, a2;
+			a1 = a2;
+			std::cout << "\n";
+			Dog		d1, d2;
+			d1 = d2;
+			std::cout << "\n";
+			Cat		c1, c2;
+			c1 = c2;
+			std::cout << "\n";
+		}
+		std::cout << std::endl;
+		{
+			WrongAnimal	a1, a2;
+			a1 = a2;
+			std::cout << "\n";
+			WrongDog		d1, d2;
+			d1 = d2;
+			std::cout << "\n";
+			WrongCat		c1, c2;
+			c1 = c2;
+			std::cout << "\n";
+		}
 	}
 	print_test_name( "Test: makeSound()" );
 	{
-		Animal().makeSound();
-		Dog().makeSound();
-		Cat().makeSound();
+		{
+			Animal().makeSound();
+			std::cout << "\n";
+			Dog().makeSound();
+			std::cout << "\n";
+			Cat().makeSound();
+		}
+		std::cout << std::endl;
+		{
+			WrongAnimal().makeSound();
+			std::cout << "\n";
+			WrongDog().makeSound();
+			std::cout << "\n";
+			WrongCat().makeSound();
+		}
 	}
 	std::cout << std::endl;
 	return 0;

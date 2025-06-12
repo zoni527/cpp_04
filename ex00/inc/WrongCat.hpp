@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/11 13:47:29 by jvarila           #+#    #+#             */
-/*   Updated: 2025/06/11 17:52:36 by jvarila          ###   ########.fr       */
+/*   Created: 2025/06/12 09:59:37 by jvarila           #+#    #+#             */
+/*   Updated: 2025/06/12 10:14:11 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-# include "Animal.hpp"
+# include "WrongAnimal.hpp"
 
-class Dog : public Animal {
+class WrongCat : public WrongAnimal {
 
 public:
-
 // ------------------------------------------------------------ member functions
-	void	makeSound( void ) const override;
+	void	makeSound( void ) const;
 // ---------------------------------------------------------------- constructors
-	Dog( void );
-	Dog( Dog const &src );
+	WrongCat( void );
+	WrongCat( WrongCat const &src );
 // ------------------------------------------------------------------ destructor
-	~Dog( void );
+	~WrongCat( void );
 // --------------------------------------------------- member operator overloads
-	Dog &operator = ( Dog const &src );
+	WrongCat	&operator = ( WrongCat const &src );
 };
 
 #endif

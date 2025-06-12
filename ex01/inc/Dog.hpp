@@ -16,13 +16,15 @@
 # define DOG_HPP
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Dog : public Animal {
 
 public:
-
 // ------------------------------------------------------------ member functions
-	void	makeSound( void ) const override;
+	void		makeSound( void ) const override;
+	std::string	get_idea( size_t index );
+	std::string	get_random_idea( void );
 // ---------------------------------------------------------------- constructors
 	Dog( void );
 	Dog( Dog const &src );
@@ -30,6 +32,9 @@ public:
 	~Dog( void );
 // --------------------------------------------------- member operator overloads
 	Dog &operator = ( Dog const &src );
+
+private:
+	Brain	*_brain = nullptr;
 };
 
 #endif

@@ -1,35 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/11 13:47:29 by jvarila           #+#    #+#             */
-/*   Updated: 2025/06/11 17:52:36 by jvarila          ###   ########.fr       */
+/*   Created: 2025/06/12 09:53:01 by jvarila           #+#    #+#             */
+/*   Updated: 2025/06/12 09:56:21 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
-# include "Animal.hpp"
+# include <string>
 
-class Dog : public Animal {
+class WrongAnimal {
 
 public:
 
 // ------------------------------------------------------------ member functions
-	void	makeSound( void ) const override;
+
+	void		makeSound( void ) const;
+
+	std::string	getType( void ) const;
+
 // ---------------------------------------------------------------- constructors
-	Dog( void );
-	Dog( Dog const &src );
+
+	WrongAnimal( void );
+	WrongAnimal( WrongAnimal const &src );
+
 // ------------------------------------------------------------------ destructor
-	~Dog( void );
+	virtual	~WrongAnimal( void );
 // --------------------------------------------------- member operator overloads
-	Dog &operator = ( Dog const &src );
+
+	WrongAnimal	&operator = ( WrongAnimal const &src );
+
+protected:
+	std::string	_type;
 };
 
 #endif

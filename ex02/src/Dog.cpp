@@ -1,50 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/11 17:09:22 by jvarila           #+#    #+#             */
-/*   Updated: 2025/06/11 17:10:36 by jvarila          ###   ########.fr       */
+/*   Created: 2025/06/11 13:54:30 by jvarila           #+#    #+#             */
+/*   Updated: 2025/06/11 13:55:14 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#import "Cat.hpp"
+#import "Dog.hpp"
 #import "ansi_colors.hpp"
 #include <iostream>
 
-std::string const	cat_str = C_B_HI_B "Cat" C_RST;
+std::string const	dog_str = C_B_HI_R "Dog" C_RST;
 
 // ------------------------------------------------------------ member functions
 
-void Cat:: makeSound( void ) const {
-	std::cout << cat_str + "	makes a sound: \"Meow!\"" << std::endl;
+void Dog:: makeSound( void ) const {
+	std::cout << dog_str + "	makes a sound: \"Woof!\"" << std::endl;
 }
 
 // ---------------------------------------------------------------- constructors
 
-Cat:: Cat( void ) {
-	std::cout << cat_str + "	default constructor called" << std::endl;
-	_type = "Cat";
+Dog:: Dog( void ) : _brain( new Brain() ) {
+	std::cout << dog_str + "	default constructor called" << std::endl;
+	_type = "Dog";
 }
 
-Cat:: Cat( Cat const &src ) : Animal( src ) {
-	std::cout << cat_str + "	copy constructor called" << std::endl;
+Dog:: Dog( Dog const &src ) : AAnimal( src ), _brain( new Brain( *src._brain ) ) {
+	std::cout << dog_str + "	copy constructor called" << std::endl;
 }
 
 // ------------------------------------------------------------------ destructor
 
-Cat:: ~Cat( void ) {
-	std::cout << cat_str + "	destructor called" << std::endl;
+Dog:: ~Dog( void ) {
+	std::cout << dog_str + "	destructor called" << std::endl;
+	delete _brain;
 }
 
 // ---------------------------------------------------------- operator overloads
 
-Cat &Cat:: operator = ( Cat const &src ) {
-	std::cout << cat_str + "	assignment operator called" << std::endl;
+Dog &Dog:: operator = ( Dog const &src ) {
+	std::cout << dog_str + "	assignment operator called" << std::endl;
 	if (this == &src)
 		return *this;
-	Animal:: operator=( src );
+	AAnimal:: operator=( src );
+	*_brain = *src._brain;
 	return *this;
 }

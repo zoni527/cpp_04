@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/11 13:47:29 by jvarila           #+#    #+#             */
-/*   Updated: 2025/06/11 17:52:36 by jvarila          ###   ########.fr       */
+/*   Created: 2025/06/11 17:07:17 by jvarila           #+#    #+#             */
+/*   Updated: 2025/06/11 17:52:28 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
-class Dog : public Animal {
+class Cat : public Animal {
 
 public:
-
 // ------------------------------------------------------------ member functions
-	void	makeSound( void ) const override;
+	void		makeSound( void ) const override;
+	std::string	get_idea( size_t index );
+	std::string	get_random_idea( void );
 // ---------------------------------------------------------------- constructors
-	Dog( void );
-	Dog( Dog const &src );
+	Cat( void );
+	Cat( Cat const &src );
 // ------------------------------------------------------------------ destructor
-	~Dog( void );
+	~Cat( void );
 // --------------------------------------------------- member operator overloads
-	Dog &operator = ( Dog const &src );
+	Cat	&operator = ( Cat const &src );
+
+private:
+	Brain	*_brain = nullptr;
 };
 
 #endif
