@@ -20,13 +20,21 @@ static void			print_test_name( std::string str );
 
 int main( void ) {
 
-	print_test_name( "Test: subject's main (with better formatting)" );
+	print_test_name( "Test: ex00 main (meta animal commented out)" );
 	{
+		// const AAnimal* meta = new Animal();
 		const AAnimal* j = new Dog();
 		const AAnimal* i = new Cat();
-
 		std::cout << "\n";
-		delete j;//should not create a leak
+		std::cout << j->getType() << " " << std::endl;
+		std::cout << i->getType() << " " << std::endl;
+		std::cout << "\n";
+		i->makeSound(); //will output the cat sound!
+		j->makeSound();
+		// meta->makeSound();
+		std::cout << "\n";
+		// delete meta;
+		delete j;
 		delete i;
 	}
 	print_test_name( "Test: array of animals" );
@@ -41,6 +49,7 @@ int main( void ) {
 		}
 		std::cout << "\n";
 		for ( AAnimal const *a : animal_array ) {
+			std::cout << C_B_HI_W "AAnimal" C_RST "	type: " << a->getType() << "\n";
 			a->makeSound();
 			delete a;
 			a = nullptr;
