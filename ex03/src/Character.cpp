@@ -93,13 +93,17 @@ void Character:: unequip( int idx ) {
 
 // -----------------------------------------------------------------------------
 
-Character:: Character( std::string const &name ) : _name( name ) {
-	for ( size_t i = 0; i < N_MATERIA; ++i )
-		_inventory[i] = nullptr;
+Character:: Character( std::string const &name )
+: _name( name ), _inventory{} {
+
+	std::cout << character_str + "	string constructor called" << std::endl;
 }
 
-Character:: Character( Character const &src ) : _name( src._name ) {
+Character:: Character( Character const &src )
+: _name( src._name ), _inventory{} {
+
 	std::cout << character_str + "	copy constructor called" << std::endl;
+
 	for ( size_t i = 0; i < N_MATERIA && src._inventory[i] != nullptr; ++i )
 		_inventory[i] = src._inventory[i]->clone();
 }
@@ -109,13 +113,15 @@ Character:: Character( Character const &src ) : _name( src._name ) {
 Character &Character:: operator = ( Character const &src ) {
 
 	std::cout << character_str + "	copy assignment operator called" << std::endl;
-	if ( this == &src )
-		return *this;
-	_name = src._name;
-	for ( size_t i = 0; i < N_MATERIA && src._inventory[i] != nullptr; ++i ) {
-		if ( _inventory[i] != nullptr )
-			delete _inventory[i];
-		_inventory[i] = src._inventory[i]->clone();
+
+	if ( this != &src ) {
+		_name = src._name;
+		for ( auto *p : _inventory ) {
+			delete p;
+			p = nullptr;
+		}
+		for ( size_t i = 0; i < N_MATERIA && src._inventory[i] != nullptr; ++i )
+			_inventory[i] = src._inventory[i]->clone();
 	}
 	return *this;
 }
