@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/23 17:07:36 by jvarila           #+#    #+#             */
-/*   Updated: 2025/06/23 17:21:16 by jvarila          ###   ########.fr       */
+/*   Created: 2025/06/24 11:57:59 by jvarila           #+#    #+#             */
+/*   Updated: 2025/06/24 11:59:34 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#ifndef MATERIASOURCE_HPP
-# define MATERIASOURCE_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
-# include "IMateriaSource.hpp"
+# include "AMateria.hpp"
+# include "ICharacter.hpp"
 
-# define N_SOURCEMATERIA	4
-
-class MateriaSource : public IMateriaSource {
+class Cure : public AMateria {
 
 public:
 // -----------------------------------------------------------------------------
-	void		learnMateria( AMateria* ) override;
-	AMateria*	createMateria( std::string const &type ) override;
+	Cure	*clone( void ) const override;
+	void	use( ICharacter &target ) override;
 // -----------------------------------------------------------------------------
-	MateriaSource( void );
-	MateriaSource( MateriaSource const &src );
+	Cure( void );
+	Cure( Cure const &src ) = delete;
 // -----------------------------------------------------------------------------
-	~MateriaSource( void );
+	~Cure( void ) = default;
 // -----------------------------------------------------------------------------
-	MateriaSource &operator = ( MateriaSource const &src );
-
-private:
-	AMateria	*_learned[ N_SOURCEMATERIA ];
+	Cure &operator = ( Cure const &src ) = delete;
 };
 
 #endif

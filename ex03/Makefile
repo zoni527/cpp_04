@@ -17,24 +17,22 @@ CFLAGS		:= -Wall -Wextra -Werror -std=c++20
 DEBUG_FLAGS	:= -g
 # ---------------------------------------------------------------------------- #
 INC_DIR		:= ./inc
-HEADERS		:= $(INC_DIR)/AAnimal.hpp		\
-			   $(INC_DIR)/Dog.hpp			\
-			   $(INC_DIR)/Cat.hpp			\
-			   $(INC_DIR)/WrongAnimal.hpp	\
-			   $(INC_DIR)/WrongDog.hpp		\
-			   $(INC_DIR)/WrongCat.hpp		\
-			   $(INC_DIR)/Brain.hpp
+HEADERS		:= $(INC_DIR)/AMateria.hpp			\
+			   $(INC_DIR)/Ice.hpp				\
+			   $(INC_DIR)/Cure.hpp				\
+			   $(INC_DIR)/ICharacter.hpp		\
+			   $(INC_DIR)/Character.hpp			\
+			   $(INC_DIR)/IMateriaSource.hpp	\
+			   $(INC_DIR)/MateriaSource.hpp
 # ---------------------------------------------------------------------------- #
 SRC_DIR	:=	./src
 OBJ_DIR	:=	./obj
 # ---------------------------------------------------------------------------- #
-SRC :=	$(SRC_DIR)/AAnimal.cpp		\
-		$(SRC_DIR)/Dog.cpp			\
-		$(SRC_DIR)/Cat.cpp			\
-		$(SRC_DIR)/WrongAnimal.cpp	\
-		$(SRC_DIR)/WrongDog.cpp		\
-		$(SRC_DIR)/WrongCat.cpp		\
-		$(SRC_DIR)/Brain.cpp		\
+SRC	:=	$(SRC_DIR)/AMateria.cpp			\
+		$(SRC_DIR)/Ice.cpp				\
+		$(SRC_DIR)/Cure.cpp				\
+		$(SRC_DIR)/Character.cpp		\
+		$(SRC_DIR)/MateriaSource.cpp	\
 		$(SRC_DIR)/main.cpp
 # ---------------------------------------------------------------------------- #
 OBJ :=	$(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRC))

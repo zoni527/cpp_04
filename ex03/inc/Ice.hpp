@@ -6,7 +6,7 @@
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 15:49:17 by jvarila           #+#    #+#             */
-/*   Updated: 2025/06/13 15:52:31 by jvarila          ###   ########.fr       */
+/*   Updated: 2025/06/24 11:59:11 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,22 @@
 #ifndef ICE_HPP
 # define ICE_HPP
 
-# include <string>
+# include "AMateria.hpp"
+# include "ICharacter.hpp"
 
-class ICharacter;
-
-class Ice {
+class Ice : public AMateria {
 
 public:
 // -----------------------------------------------------------------------------
-	std::string const	&getType( void ) const;
-
-	Ice					*clone( void ) const;
-	void				use( ICharacter &target );
+	Ice		*clone( void ) const override;
+	void	use( ICharacter &target ) override;
 // -----------------------------------------------------------------------------
 	Ice( void );
-	Ice( Ice const &src );
+	Ice( Ice const &src ) = delete;
 // -----------------------------------------------------------------------------
-	~Ice( void );
+	~Ice( void ) = default;
 // -----------------------------------------------------------------------------
-	Ice &operator = ( Ice const &src );
-
-protected:
-	std::string	_type = "ice";
+	Ice &operator = ( Ice const &src ) = delete;
 };
 
 #endif

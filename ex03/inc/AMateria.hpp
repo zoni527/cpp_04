@@ -6,7 +6,7 @@
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 10:25:45 by jvarila           #+#    #+#             */
-/*   Updated: 2025/06/13 12:36:39 by jvarila          ###   ########.fr       */
+/*   Updated: 2025/06/24 11:39:22 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,16 @@ public:
 	virtual AMateria	*clone( void ) const = 0;
 	virtual void		use( ICharacter &target );
 // -----------------------------------------------------------------------------
-	AMateria( void ) = delete;
+	AMateria( void )						= delete;
+	AMateria( AMateria		const &src )	= delete;
 	AMateria( std::string	const &type );
-	AMateria( AMateria		const &src );
 // -----------------------------------------------------------------------------
-	virtual ~AMateria( void );
+	virtual ~AMateria( void ) = default;
 // -----------------------------------------------------------------------------
-	AMateria &operator = ( AMateria const &src );
+	AMateria	&operator = ( AMateria const &src ) = delete;
 
 protected:
-	std::string	_type;
+	std::string const	_type;
 };
 
 #endif
