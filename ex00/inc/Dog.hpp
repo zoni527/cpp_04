@@ -20,7 +20,6 @@
 class Dog : public Animal {
 
 public:
-
 // ------------------------------------------------------------ member functions
 	void	makeSound( void ) const override;
 // ---------------------------------------------------------------- constructors

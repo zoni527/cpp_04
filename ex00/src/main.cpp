@@ -22,7 +22,7 @@ static void			print_test_name( std::string str );
 
 int main( void ) {
 
-	print_test_name( "Test: subject's main (with better formatting)" );
+	print_test_name( "subject's main (with better formatting)" );
 	{
 		const Animal* meta = new Animal();
 		const Animal* j = new Dog();
@@ -42,7 +42,7 @@ int main( void ) {
 		delete i;
 		delete j;
 	}
-	print_test_name( "Test: subject's main with wrong animals (with better formatting)" );
+	print_test_name( "subject's main with wrong animals (with better formatting)" );
 	{
 		const WrongAnimal* meta = new WrongAnimal();
 		const WrongAnimal* j = new WrongDog();
@@ -62,7 +62,7 @@ int main( void ) {
 		delete i;
 		delete j;
 	}
-	print_test_name( "Test: default costructors" );
+	print_test_name( "default costructors" );
 	{
 		{
 			Animal	a;
@@ -82,7 +82,7 @@ int main( void ) {
 			std::cout << "\n";
 		}
 	}
-	print_test_name( "Test: copy constructors" );
+	print_test_name( "copy constructors" );
 	{
 		{
 			Animal	a1;
@@ -108,7 +108,7 @@ int main( void ) {
 			std::cout << "\n";
 		}
 	}
-	print_test_name( "Test: copy assignment operators" );
+	print_test_name( "copy assignment operators" );
 	{
 		{
 			Animal	a1, a2;
@@ -134,7 +134,7 @@ int main( void ) {
 			std::cout << "\n";
 		}
 	}
-	print_test_name( "Test: makeSound()" );
+	print_test_name( "makeSound()" );
 	{
 		{
 			Animal().makeSound();

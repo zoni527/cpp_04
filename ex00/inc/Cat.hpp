@@ -20,20 +20,14 @@
 class Cat : public Animal {
 
 public:
-
 // ------------------------------------------------------------ member functions
-
 	void	makeSound( void ) const override;
-
 // ---------------------------------------------------------------- constructors
-
 	Cat( void );
 	Cat( Cat const &src );
-
 // ------------------------------------------------------------------ destructor
 	~Cat( void );
 // --------------------------------------------------- member operator overloads
-
 	Cat	&operator = ( Cat const &src );
 };
 
