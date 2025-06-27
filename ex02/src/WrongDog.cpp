@@ -27,27 +27,27 @@ void WrongDog:: makeSound( void ) const {
 
 WrongDog:: WrongDog( void ) {
 
-	std::cout << id_str + "	default constructor called" << std::endl;
+	std::cout << id_str + "	Default constructor called" << std::endl;
 	_type = "WrongDog";
 }
 
 WrongDog:: WrongDog( WrongDog const &src ) : WrongAnimal( src ) {
 
-	std::cout << id_str + "	copy constructor called" << std::endl;
+	std::cout << id_str + "	Dopy constructor called" << std::endl;
 }
 
 // ------------------------------------------------------------------ destructor
 
 WrongDog:: ~WrongDog( void ) {
 
-	std::cout << id_str + "	destructor called"	<< std::endl;
+	std::cout << id_str + "	Destructor called"	<< std::endl;
 }
 
 // ---------------------------------------------------------- operator overloads
 
 WrongDog &WrongDog:: operator = ( WrongDog const &src ) {
 
-	std::cout << id_str + "	copy assignment operator called" << std::endl;
+	std::cout << id_str + "	Dopy assignment operator called" << std::endl;
 	if (this != &src)
 		WrongAnimal:: operator=( src );
 	return *this;

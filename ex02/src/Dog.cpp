@@ -37,20 +37,20 @@ std::string Dog:: get_random_idea( void ) {
 
 Dog:: Dog( void ) : _brain( new Brain() ) {
 
-	std::cout << id_str + "	default constructor called" << std::endl;
+	std::cout << id_str + "	Default constructor called" << std::endl;
 	_type = "Dog";
 }
 
 Dog:: Dog( Dog const &src ) : AAnimal( src ), _brain( new Brain( *src._brain ) ) {
 
-	std::cout << id_str + "	copy constructor called" << std::endl;
+	std::cout << id_str + "	Copy constructor called" << std::endl;
 }
 
 // ------------------------------------------------------------------ destructor
 
 Dog:: ~Dog( void ) {
 
-	std::cout << id_str + "	destructor called" << std::endl;
+	std::cout << id_str + "	Destructor called" << std::endl;
 	delete _brain;
 }
 
@@ -58,7 +58,7 @@ Dog:: ~Dog( void ) {
 
 Dog &Dog:: operator = ( Dog const &src ) {
 
-	std::cout << id_str + "	copy assignment operator called" << std::endl;
+	std::cout << id_str + "	Copy assignment operator called" << std::endl;
 	if (this != &src) {
 		AAnimal:: operator=( src );
 		*_brain = *src._brain;

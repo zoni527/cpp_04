@@ -27,27 +27,27 @@ void Cat:: makeSound( void ) const {
 
 Cat:: Cat( void ) {
 
-	std::cout << id_str + "	default constructor called" << std::endl;
+	std::cout << id_str + "	Default constructor called" << std::endl;
 	_type = "Cat";
 }
 
 Cat:: Cat( Cat const &src ) : Animal( src ) {
 
-	std::cout << id_str + "	copy constructor called" << std::endl;
+	std::cout << id_str + "	Copy constructor called" << std::endl;
 }
 
 // ------------------------------------------------------------------ destructor
 
 Cat:: ~Cat( void ) {
 
-	std::cout << id_str + "	destructor called" << std::endl;
+	std::cout << id_str + "	Destructor called" << std::endl;
 }
 
 // ---------------------------------------------------------- operator overloads
 
 Cat &Cat:: operator = ( Cat const &src ) {
 
-	std::cout << id_str + "	copy assignment operator called" << std::endl;
+	std::cout << id_str + "	Copy assignment operator called" << std::endl;
 	if (this != &src)
 		Animal:: operator=( src );
 	return *this;

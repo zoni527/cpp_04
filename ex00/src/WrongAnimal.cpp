@@ -32,12 +32,12 @@ std::string WrongAnimal:: getType( void ) const {
 
 WrongAnimal:: WrongAnimal( void ) : _type( "WrongAnimal" ) {
 
-	std::cout << id_str + "	default constructor called" << std::endl;
+	std::cout << id_str + "	Default constructor called" << std::endl;
 }
 
 WrongAnimal:: WrongAnimal( WrongAnimal const &src ) {
 
-	std::cout << id_str + "	copy constructor called" << std::endl;
+	std::cout << id_str + "	Copy constructor called" << std::endl;
 	_type = src._type;
 }
 
@@ -45,14 +45,14 @@ WrongAnimal:: WrongAnimal( WrongAnimal const &src ) {
 
 WrongAnimal:: ~WrongAnimal( void ) {
 
-	std::cout << id_str + "	destructor called" << std::endl;
+	std::cout << id_str + "	Destructor called" << std::endl;
 }
 
 // ---------------------------------------------------------- operator overloads
 
 WrongAnimal &WrongAnimal:: operator = ( WrongAnimal const &src ) {
 
-	std::cout << id_str + "	copy assignment operator called" << std::endl;
+	std::cout << id_str + "	Copy assignment operator called" << std::endl;
 	if (this != &src)
 		_type = src._type;
 	return *this;

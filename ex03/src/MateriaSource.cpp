@@ -74,6 +74,7 @@ MateriaSource:: MateriaSource( MateriaSource const &src )
 
 MateriaSource:: ~MateriaSource( void ) {
 
+	std::cout << id_str << "	Destructor called" << std::endl;
 	for ( auto p = std::begin( _learned ); p != std::end( _learned ) && *p != nullptr; ++p )
 		delete *p;
 }

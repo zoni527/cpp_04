@@ -55,7 +55,7 @@ std::string Brain:: get_random_idea( void ) {
 
 Brain:: Brain( void ) {
 
-	std::cout << id_str + "	default constructor called" << std::endl;
+	std::cout << id_str + "	Default constructor called" << std::endl;
 
 	size_t number_of_random_ideas = sizeof( random_ideas ) / sizeof( random_ideas[0] );
 	for ( int i = 0; i < N_IDEAS; ++i )
@@ -64,7 +64,7 @@ Brain:: Brain( void ) {
 
 Brain:: Brain( Brain const &src ) {
 
-	std::cout << id_str + "	copy constructor called" << std::endl;
+	std::cout << id_str + "	Copy constructor called" << std::endl;
 
 	if ( this != &src )
 		for ( int i = 0; i < N_IDEAS; ++i )
@@ -75,14 +75,14 @@ Brain:: Brain( Brain const &src ) {
 
 Brain:: ~Brain( void ) {
 
-	std::cout << id_str + "	destructor called" << std::endl;
+	std::cout << id_str + "	Destructor called" << std::endl;
 }
 
 // -----------------------------------------------------------------------------
 
 Brain &Brain:: operator = ( Brain const &src ) {
 
-	std::cout << id_str + "	copy assignment operator called" << std::endl;
+	std::cout << id_str + "	Copy assignment operator called" << std::endl;
 
 	if ( this != &src )
 		for ( int i = 0; i < N_IDEAS; ++i )

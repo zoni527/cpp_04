@@ -32,12 +32,12 @@ std::string Animal:: getType( void ) const {
 
 Animal:: Animal( void ) : _type( "Animal" ) {
 
-	std::cout << id_str + "	default constructor called" << std::endl;
+	std::cout << id_str + "	Default constructor called" << std::endl;
 }
 
 Animal:: Animal( Animal const &src ) {
 
-	std::cout << id_str + "	copy constructor called" << std::endl;
+	std::cout << id_str + "	Copy constructor called" << std::endl;
 	_type = src._type;
 }
 
@@ -45,14 +45,14 @@ Animal:: Animal( Animal const &src ) {
 
 Animal:: ~Animal( void ) {
 
-	std::cout << id_str + "	destructor called" << std::endl;
+	std::cout << id_str + "	Destructor called" << std::endl;
 }
 
 // ---------------------------------------------------------- operator overloads
 
 Animal &Animal:: operator = ( Animal const &src ) {
 
-	std::cout << id_str + "	copy assignment operator called" << std::endl;
+	std::cout << id_str + "	Copy assignment operator called" << std::endl;
 	if (this != &src)
 		_type = src._type;
 	return *this;
