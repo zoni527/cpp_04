@@ -20,7 +20,6 @@
 class WrongDog : public WrongAnimal {
 
 public:
-
 // ------------------------------------------------------------ member functions
 	void	makeSound( void ) const;
 // ---------------------------------------------------------------- constructors

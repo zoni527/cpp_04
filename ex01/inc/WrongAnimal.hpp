@@ -20,22 +20,15 @@
 class WrongAnimal {
 
 public:
-
 // ------------------------------------------------------------ member functions
-
 	void		makeSound( void ) const;
-
 	std::string	getType( void ) const;
-
 // ---------------------------------------------------------------- constructors
-
 	WrongAnimal( void );
 	WrongAnimal( WrongAnimal const &src );
-
 // ------------------------------------------------------------------ destructor
 	virtual	~WrongAnimal( void );
 // --------------------------------------------------- member operator overloads
-
 	WrongAnimal	&operator = ( WrongAnimal const &src );
 
 protected:

@@ -20,22 +20,16 @@
 class Animal {
 
 public:
-
 // ------------------------------------------------------------ member functions
-
 	virtual void	makeSound( void ) const;
 
 	std::string		getType() const;
-
 // ---------------------------------------------------------------- constructors
-
 	Animal( void );
 	Animal( Animal const &src );
-
 // ------------------------------------------------------------------ destructor
 	virtual	~Animal( void );
 // --------------------------------------------------- member operator overloads
-
 	Animal &operator = ( Animal const &src );
 
 protected:
