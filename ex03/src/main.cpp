@@ -58,15 +58,39 @@ int main( void ) {
 		delete me;
 		delete src;
 	}
+	print_test_name( "Equip" );
+	{
+		Character me( "me" );
+		std::cout << "\n";
+		me.equip( new Ice() );
+		std::cout << "\n";
+		me.equip( new Cure() );
+		std::cout << "\n";
+		me.equip( nullptr );
+		std::cout << "\n";
+		me.equip( new Cure() );
+		std::cout << "\n";
+		me.equip( new Cure() );
+		std::cout << "\n";
+		me.equip( new Cure() );
+		std::cout << "\n";
+	}
 	print_test_name( "Unequip" );
 	{
 		Character me( "me" );
+		std::cout << "\n";
 		me.equip( new Ice() );
+		std::cout << "\n";
 		me.equip( new Cure() );
+		std::cout << "\n";
 		me.unequip( 0 );
+		std::cout << "\n";
 		me.unequip( 2 );
+		std::cout << "\n";
 		me.unequip( 10 );
+		std::cout << "\n";
 		me.unequip( 1 );
+		std::cout << "\n";
 	}
 	for ( AMateria *ptr : floor ) {
 		if ( ptr )

@@ -59,7 +59,10 @@ void Character:: equip( AMateria *m ) {
 	while ( ++i < N_MATERIA && _inventory[i] )
 		;
 	if ( i >= N_MATERIA ) {
-		std::cout << id_str << "	" << _name << "'s inventory is full" << std::endl;
+		std::cout
+			<< C_B_HI_R "ERROR!" C_RST
+			<< "		Character:: equip: " << _name << "'s inventory is full" << std::endl;
+		delete m;
 		return;
 	}
 	std::cout
