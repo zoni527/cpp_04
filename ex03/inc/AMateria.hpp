@@ -32,7 +32,7 @@ public:
 	AMateria( AMateria		const &src )	= delete;
 	AMateria( std::string	const &type );
 // -----------------------------------------------------------------------------
-	virtual ~AMateria( void ) = default;
+	virtual ~AMateria( void );
 // -----------------------------------------------------------------------------
 	AMateria	&operator = ( AMateria const &src ) = delete;
 

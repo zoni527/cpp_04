@@ -34,5 +34,11 @@ void Cure:: use( ICharacter &target ) {
 
 Cure:: Cure( void )
 : AMateria( "cure" ) {
+
 	std::cout << id_str << "		Default constructor called" << std::endl;
+}
+
+Cure:: ~Cure( void ) {
+
+	std::cout << id_str << "		Destructor called" << std::endl;
 }

@@ -37,3 +37,8 @@ Ice:: Ice( void )
 
 	std::cout << id_str << "		Default constructor called" << std::endl;
 }
+
+Ice:: ~Ice( void ) {
+
+	std::cout << id_str << "		Destructor called" << std::endl;
+}

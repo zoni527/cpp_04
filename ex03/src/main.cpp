@@ -20,31 +20,60 @@
 static std::string	n_chars( char c, size_t n );
 static void			print_test_name( std::string str );
 
+extern AMateria		*floor[ N_FLOOR ];
+
 int main( void ) {
 
-	print_test_name( "Subject's main" );
+	print_test_name( "Subject's main with better formatting" );
 	{
 		IMateriaSource* src = new MateriaSource();
+		std::cout << "\n";
 		src->learnMateria(new Ice());
+		std::cout << "\n";
 		src->learnMateria(new Cure());
+		std::cout << "\n";
 
 		ICharacter* me = new Character("me");
+		std::cout << "\n";
 
 		AMateria* tmp;
 		tmp = src->createMateria("ice");
+		std::cout << "\n";
 		me->equip(tmp);
+		std::cout << "\n";
 		tmp = src->createMateria("cure");
+		std::cout << "\n";
 		me->equip(tmp);
+		std::cout << "\n";
 
 		ICharacter* bob = new Character("bob");
+		std::cout << "\n";
 
 		me->use(0, *bob);
+		std::cout << "\n";
 		me->use(1, *bob);
+		std::cout << "\n";
 
 		delete bob;
 		delete me;
 		delete src;
 	}
+	print_test_name( "Unequip" );
+	{
+		Character me( "me" );
+		me.equip( new Ice() );
+		me.equip( new Cure() );
+		me.unequip( 0 );
+		me.unequip( 2 );
+		me.unequip( 10 );
+		me.unequip( 1 );
+	}
+	for ( AMateria *ptr : floor ) {
+		if ( ptr )
+			std::cout << ptr->getType() << std::endl;
+		delete ptr;
+	}
+	std::cout << "\n";
 	return 0;
 }
 

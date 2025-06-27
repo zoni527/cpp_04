@@ -20,10 +20,12 @@ std::string const	id_str = C_B_HI_W "AMateria" C_RST;
 // -----------------------------------------------------------------------------
 
 std::string const &AMateria::getType( void ) const {
+
 	return _type;
 }
 
 void AMateria:: use( ICharacter &target ) {
+
 	std::cout
 		<< "* uses materia of type " << _type << " on " << target.getName()
 		<< std::endl;
@@ -33,6 +35,12 @@ void AMateria:: use( ICharacter &target ) {
 
 AMateria:: AMateria( std::string const &type )
 : _type( type ) {
+
 	std::cout	<< id_str << "	String constructor called with parameter: "
 				<< type << std::endl;
+}
+
+AMateria:: ~AMateria( void ) {
+
+	std::cout << id_str << "	Destructor called" << std::endl;
 }

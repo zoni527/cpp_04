@@ -18,6 +18,12 @@ std::string const id_str = C_B_HI_Y "MateriaSource" C_RST;
 
 // -----------------------------------------------------------------------------
 
+/**
+ * This function will free the pointer that is given to it, because the
+ * subject's main would leak otherwise. This does create a risk for programmer
+ * error, if the programmer assumes that the learned materia is still accessible.
+ * (although it isn't marked const, so I guess all bets are off then)
+ */
 void MateriaSource:: learnMateria( AMateria *materia ) {
 
 	if ( _learned[ N_SOURCEMATERIA - 1 ] != nullptr ) {
@@ -52,11 +58,14 @@ AMateria *MateriaSource:: createMateria( std::string const &type ) {
 
 MateriaSource:: MateriaSource( void )
 : _learned{} {
+
+	std::cout << id_str << "	Default constructor called" << std::endl;
 }
 
 MateriaSource:: MateriaSource( MateriaSource const &src )
 : _learned{} {
 
+	std::cout << id_str << "	Copy constructor called" << std::endl;
 	for ( size_t i = 0; i < N_SOURCEMATERIA && src._learned[i]; ++i )
 		_learned[i] = src._learned[i]->clone();
 }

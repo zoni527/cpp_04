@@ -28,7 +28,7 @@ public:
 	Cure( void );
 	Cure( Cure const &src ) = delete;
 // -----------------------------------------------------------------------------
-	~Cure( void ) = default;
+	~Cure( void );
 // -----------------------------------------------------------------------------
 	Cure &operator = ( Cure const &src ) = delete;
 };

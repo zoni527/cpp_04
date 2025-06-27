@@ -19,6 +19,7 @@
 # include "ICharacter.hpp"
 
 # define N_MATERIA	4
+# define N_FLOOR	1024
 
 class Character : public ICharacter {
 

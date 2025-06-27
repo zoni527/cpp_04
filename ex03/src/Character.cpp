@@ -15,22 +15,24 @@
 #include "AMateria.hpp"
 #include "ansi_colors.hpp"
 
-std::string const	id_str = C_B_P "Character" C_RST;
+std::string const	id_str				= C_B_P "Character" C_RST;
+AMateria			*floor[ N_FLOOR ]	= {nullptr};
+size_t				floor_idx			= 0;
 
 // -----------------------------------------------------------------------------
 
-void	Character:: use( int idx, ICharacter &target ) {
+void		Character:: use( int idx, ICharacter &target ) {
 
 	if ( idx < 0 || idx >= N_MATERIA ) {
 		std::cout
 			<< C_B_HI_R "ERROR!" C_RST
-			<< " Character:: use: Invalid materia index: " << idx
+			<< "		Character:: use: Invalid materia index: " << idx
 			<< std::endl;
 		return;
 	} else if ( _inventory[idx] == nullptr ) {
 		std::cout
 			<< C_B_HI_R "ERROR!" C_RST
-			<< " Character:: use: No materia equipped at index: " << idx
+			<< "		Character:: use: No materia equipped at index: " << idx
 			<< std::endl;
 		return;
 	}
@@ -50,22 +52,19 @@ void Character:: equip( AMateria *m ) {
 	if ( m == nullptr ) {
 		std::cout
 			<< C_B_HI_R "ERROR!" C_RST
-			<< " Character:: equip: Materia pointer is null" << std::endl;
-		return;
-	}
-	if ( _inventory[ N_MATERIA - 1 ]) {
-		std::cout
-			<< id_str << "	" << _name << "'s inventory is full"
-			<< std::endl;
+			<< "		Character:: equip: Materia pointer is null" << std::endl;
 		return;
 	}
 	size_t i = -1;
 	while ( ++i < N_MATERIA && _inventory[i] )
 		;
+	if ( i >= N_MATERIA ) {
+		std::cout << id_str << "	" << _name << "'s inventory is full" << std::endl;
+		return;
+	}
 	std::cout
-		<< id_str << "	" << _name << " equips materia "
-		<< m->getType()
-		<< std::endl;
+		<< id_str << "	" << _name << " equips materia " << m->getType()
+		<< " at inventory index " << i << std::endl;
 	_inventory[i] = m;
 }
 
@@ -74,13 +73,13 @@ void Character:: unequip( int idx ) {
 	if ( idx < 0 || idx >= N_MATERIA ) {
 		std::cout
 			<< C_B_HI_R "ERROR!" C_RST
-			<< " Character:: unequip: Invalid materia index: " << idx
+			<< "		Character:: unequip: Invalid materia index: " << idx
 			<< std::endl;
 		return;
 	} else if ( _inventory[idx] == nullptr ) {
 		std::cout
 			<< C_B_HI_R "ERROR!" C_RST
-			<< " Character:: unequip: No materia equipped at index: " << idx
+			<< "		Character:: unequip: No materia equipped at index: " << idx
 			<< std::endl;
 		return;
 	}
@@ -88,6 +87,14 @@ void Character:: unequip( int idx ) {
 		<< id_str << "	" << _name << " unequips materia "
 		<< _inventory[idx]->getType() << " in inventory slot " << idx
 		<< std::endl;
+	if (floor_idx == N_FLOOR) {
+		std::cout
+			<< id_str << "	" << _name << " can't unequip materia "
+			<< _inventory[idx]->getType() << " in inventory slot " << idx
+			<< ", floor is full" << std::endl;
+		return;
+	}
+	floor[floor_idx++] = _inventory[idx];
 	_inventory[idx] = nullptr;
 }
 
@@ -96,14 +103,14 @@ void Character:: unequip( int idx ) {
 Character:: Character( std::string const &name )
 : _name( name ), _inventory{} {
 
-	std::cout	<< id_str + "	string constructor called with parameter: "
+	std::cout	<< id_str + "	String constructor called with parameter: "
 				<< name << std::endl;
 }
 
 Character:: Character( Character const &src )
 : _name( src._name ), _inventory{} {
 
-	std::cout << id_str + "	copy constructor called" << std::endl;
+	std::cout << id_str + "	Copy constructor called" << std::endl;
 
 	for ( size_t i = 0; i < N_MATERIA && src._inventory[i] != nullptr; ++i )
 		_inventory[i] = src._inventory[i]->clone();
@@ -113,7 +120,7 @@ Character:: Character( Character const &src )
 
 Character::~Character( void ) {
 
-	std::cout << id_str + "	destructor called" << std::endl;
+	std::cout << id_str + "	Destructor called" << std::endl;
 	for ( auto p : _inventory )
 		delete p;
 }
@@ -122,7 +129,7 @@ Character::~Character( void ) {
 
 Character &Character:: operator = ( Character const &src ) {
 
-	std::cout << id_str + "	copy assignment operator called" << std::endl;
+	std::cout << id_str + "	Copy assignment operator called" << std::endl;
 
 	if ( this != &src ) {
 		_name = src._name;
