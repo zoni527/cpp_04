@@ -6,7 +6,7 @@
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 10:16:28 by jvarila           #+#    #+#             */
-/*   Updated: 2025/06/12 10:17:20 by jvarila          ###   ########.fr       */
+/*   Updated: 2025/06/27 11:13:46 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 class WrongDog : public WrongAnimal {
 
 public:
-
 // ------------------------------------------------------------ member functions
 	void	makeSound( void ) const;
 // ---------------------------------------------------------------- constructors

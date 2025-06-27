@@ -6,7 +6,7 @@
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 09:46:37 by jvarila           #+#    #+#             */
-/*   Updated: 2025/06/09 11:56:15 by jvarila          ###   ########.fr       */
+/*   Updated: 2025/06/27 11:12:45 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void			print_test_name( std::string str );
 
 int main( void ) {
 
-	print_test_name( "Test: ex00 main (meta animal commented out)" );
+	print_test_name( "ex00 main (meta animal commented out)" );
 	{
 		// const AAnimal* meta = new Animal();
 		const AAnimal* j = new Dog();
@@ -37,7 +37,7 @@ int main( void ) {
 		delete j;
 		delete i;
 	}
-	print_test_name( "Test: array of animals" );
+	print_test_name( "array of animals" );
 	{
 		unsigned const num_of_animals = 8;
 		AAnimal const *animal_array[ num_of_animals ];

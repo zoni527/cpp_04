@@ -6,7 +6,7 @@
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 17:07:17 by jvarila           #+#    #+#             */
-/*   Updated: 2025/06/12 16:04:22 by jvarila          ###   ########.fr       */
+/*   Updated: 2025/06/27 11:12:52 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ class Cat : public AAnimal {
 
 public:
 // ------------------------------------------------------------ member functions
-	void	makeSound( void ) const override;
+	void		makeSound( void ) const override;
+	std::string	get_idea( size_t index );
+	std::string	get_random_idea( void );
 // ---------------------------------------------------------------- constructors
 	Cat( void );
 	Cat( Cat const &src );

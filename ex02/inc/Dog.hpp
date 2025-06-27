@@ -6,7 +6,7 @@
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 13:47:29 by jvarila           #+#    #+#             */
-/*   Updated: 2025/06/12 16:04:50 by jvarila          ###   ########.fr       */
+/*   Updated: 2025/06/27 11:12:54 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ class Dog : public AAnimal {
 
 public:
 // ------------------------------------------------------------ member functions
-	void	makeSound( void ) const override;
+	void		makeSound( void ) const override;
+	std::string	get_idea( size_t index );
+	std::string	get_random_idea( void );
 // ---------------------------------------------------------------- constructors
 	Dog( void );
 	Dog( Dog const &src );
