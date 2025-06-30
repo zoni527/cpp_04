@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#import "Cat.hpp"
-#import "ansi_colors.hpp"
+#include "Cat.hpp"
+#include "ansi_colors.hpp"
 #include <iostream>
 
 std::string const	id_str = C_B_HI_B "Cat" C_RST;

@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#import "AAnimal.hpp"
-#import "ansi_colors.hpp"
+#include "AAnimal.hpp"
+#include "ansi_colors.hpp"
 #include <iostream>
 
 std::string const	animal_str = C_B_HI_W "AAnimal" C_RST;

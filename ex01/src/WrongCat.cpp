@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#import "WrongCat.hpp"
-#import "ansi_colors.hpp"
+#include "WrongCat.hpp"
+#include "ansi_colors.hpp"
 #include <iostream>
 
 std::string const	id_str = C_B_HI_G "WrongCat" C_RST;
